@@ -11,6 +11,7 @@ params = {
     'train_type': 'normal_cancer',
     'blood_test_data': blood_test_data,
     'model_file_storage_path': '/Users/hermann/PycharmProjects/lhmind/models',
+    'disease_type': 'fanai',
     'model_name': 'logistic_regression',
     'reference_values': reference_values
 }

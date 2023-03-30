@@ -40,17 +40,17 @@ class BaseModel:
         with open(info_file_path, 'w') as info_file:
             json.dump(info_data, info_file)
 
-    def save_model(self, model_file_path, evaluation_result, feature_names):
+    def save_model(self, model_file_path, evaluation_result, feature_names, median_values_dict):
         # Save the model to a file
         joblib.dump(self.model, model_file_path)
 
         # Prepare training information
         training_info = {
-            'model_file': model_file_path,
+            'model_file_path': model_file_path,
             'evaluation_result': evaluation_result,
             'feature_names': feature_names,
-            'timestamp': datetime.now().strftime('%Y-%m-%d %H:%M:%S')
-        }
+            'median_values_dict': median_values_dict
+    }
 
         # Load existing training information from the JSON file
         training_info_file = os.path.join(os.path.dirname(model_file_path), 'training_info.json')
@@ -60,7 +60,7 @@ class BaseModel:
         else:
             existing_training_info = {}
 
-        # Update the training information of the corresponding model
+        # Update the existing training information with the new training_info
         existing_training_info[self.__class__.__name__] = training_info
 
         # Save the updated training information to the JSON file
