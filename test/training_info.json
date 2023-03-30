@@ -1,0 +1,144 @@
+{
+    "LogisticRegressionModel": {
+        "model_file": "/Users/hermann/PycharmProjects/lhmind/models/1234567890/normal_cancer/logistic_regression_model.pkl",
+        "evaluation_result": {
+            "0": {
+                "precision": 0.9624664879356568,
+                "recall": 0.991908427077166,
+                "f1-score": 0.9769656915152104,
+                "support": 5067
+            },
+            "1": {
+                "precision": 0.83984375,
+                "recall": 0.5231143552311436,
+                "f1-score": 0.6446776611694153,
+                "support": 411
+            },
+            "accuracy": 0.9567360350492881,
+            "macro avg": {
+                "precision": 0.9011551189678284,
+                "recall": 0.7575113911541548,
+                "f1-score": 0.8108216763423128,
+                "support": 5478
+            },
+            "weighted avg": {
+                "precision": 0.9532664249032444,
+                "recall": 0.9567360350492881,
+                "f1-score": 0.9520349904432641,
+                "support": 5478
+            }
+        },
+        "feature_names": [
+            "AGE",
+            "RBC",
+            "HCT",
+            "NEUT",
+            "NEUTNO",
+            "MONO",
+            "MONONO",
+            "BASO",
+            "BASONO",
+            "EO",
+            "EONO",
+            "MCH",
+            "MCHC",
+            "MPV",
+            "WBC",
+            "MCV",
+            "PLT",
+            "PDW",
+            "LYMPH",
+            "LYMPHNO",
+            "RDW_CV",
+            "RDW_SD",
+            "PCT",
+            "HGB",
+            "ALB",
+            "ALT",
+            "AST",
+            "GGT",
+            "CREA",
+            "UREA",
+            "UA",
+            "GLU",
+            "CHOL",
+            "TG",
+            "HDL_C",
+            "LDL_C",
+            "APOA1",
+            "TBIL"
+        ],
+        "timestamp": "2023-03-30 14:53:13"
+    },
+    "SVMModel": {
+        "model_file": "/Users/hermann/PycharmProjects/lhmind/models/1234567890/normal_cancer/svm_model.pkl",
+        "evaluation_result": {
+            "0": {
+                "precision": 0.9596574690770695,
+                "recall": 0.9952634695085849,
+                "f1-score": 0.9771362139120324,
+                "support": 5067
+            },
+            "1": {
+                "precision": 0.8923766816143498,
+                "recall": 0.48418491484184917,
+                "f1-score": 0.6277602523659306,
+                "support": 411
+            },
+            "accuracy": 0.9569185834246076,
+            "macro avg": {
+                "precision": 0.9260170753457097,
+                "recall": 0.739724192175217,
+                "f1-score": 0.8024482331389815,
+                "support": 5478
+            },
+            "weighted avg": {
+                "precision": 0.9546095677175992,
+                "recall": 0.9569185834246076,
+                "f1-score": 0.9509234500939513,
+                "support": 5478
+            }
+        },
+        "feature_names": [
+            "AGE",
+            "RBC",
+            "HCT",
+            "NEUT",
+            "NEUTNO",
+            "MONO",
+            "MONONO",
+            "BASO",
+            "BASONO",
+            "EO",
+            "EONO",
+            "MCH",
+            "MCHC",
+            "MPV",
+            "WBC",
+            "MCV",
+            "PLT",
+            "PDW",
+            "LYMPH",
+            "LYMPHNO",
+            "RDW_CV",
+            "RDW_SD",
+            "PCT",
+            "HGB",
+            "ALB",
+            "ALT",
+            "AST",
+            "GGT",
+            "CREA",
+            "UREA",
+            "UA",
+            "GLU",
+            "CHOL",
+            "TG",
+            "HDL_C",
+            "LDL_C",
+            "APOA1",
+            "TBIL"
+        ],
+        "timestamp": "2023-03-30 14:52:44"
+    }
+}
