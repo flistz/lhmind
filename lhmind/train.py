@@ -4,6 +4,7 @@ from lhmind.data_processing import preprocess_data
 from lhmind.models import LogisticRegressionModel, RandomForestModel, SVMModel
 from lhmind.utils import save_training_information
 
+
 def train_model(params):
     hospital_phone = params['hospital_phone']
     train_type = params['train_type']
