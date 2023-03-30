@@ -10,9 +10,10 @@ def train_model(params):
     blood_test_data = params['blood_test_data']
     model_file_storage_path = params['model_file_storage_path']
     model_name = params['model_name']
+    reference_values = params['reference_values']
 
     # Preprocess data
-    X_train, X_test, y_train, y_test = preprocess_data(blood_test_data, train_type)
+    X_train, X_test, y_train, y_test = preprocess_data(blood_test_data, train_type, reference_values)
 
     # Train the model and get evaluation results
     if model_name == 'logistic_regression':
@@ -26,7 +27,7 @@ def train_model(params):
 
     model.train(X_train, y_train)
     evaluation_result = model.evaluate(X_test, y_test)
-
+    print(evaluation_result['report'])
     # Save the trained model
     model_filename = f"{hospital_phone}_{train_type}_{model_name}_model.pkl"
     model_file_path = os.path.join(model_file_storage_path, model_filename)

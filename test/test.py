@@ -2,8 +2,8 @@ import pandas as pd
 from lhmind.train import train_model
 
 # Load data from CSV files
-blood_test_data = pd.read_csv("path/to/blood_test_data.csv")
-reference_values = pd.read_csv("path/to/reference_values.csv")
+blood_test_data = pd.read_csv("test.csv")
+reference_values = pd.read_csv("reference.csv")
 
 # Define training parameters
 params = {

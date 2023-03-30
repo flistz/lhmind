@@ -1,4 +1,4 @@
-blood_test_indicators = {
+blood_test_all_indicators = {
     'RBC': '红细胞计数',
     'HCT': '红细胞压积',
     'NEUT': '中性粒细胞',
@@ -36,6 +36,10 @@ blood_test_indicators = {
     'LDL_C': '低密度脂蛋白胆固醇',
     'APOA1': '载脂蛋白A1',
     'TBIL': '总胆红素'
+}
+
+basic_information = {
+    'AGE': '年龄'
 }
 
 # Blood Routine Indicators Dictionary
