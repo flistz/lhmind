@@ -50,14 +50,15 @@ def filter_and_map_data(normalized_data, target_col):
     filtered_data = normalized_data[normalized_data['DISEASE'].apply(filter_func)]
 
     # Map the DISEASE column values based on the target_col
-    filtered_data['label'] = filtered_data['DISEASE'].apply(map_func)
+    filtered_data_with_label = filtered_data.copy()
+    filtered_data_with_label['label'] = filtered_data['DISEASE'].apply(map_func)
 
-    value_counts = filtered_data['label'].value_counts()
+    value_counts = filtered_data_with_label['label'].value_counts()
 
     if not bool(len(value_counts) == 2 and 0 in value_counts.index and 1 in value_counts.index):
         raise Exception('数据的训练类型与数据的标签类型数量不符')
 
-    return filtered_data
+    return filtered_data_with_label
 
 
 def preprocess_data(data, train_type, reference_values):

@@ -25,15 +25,22 @@ def train_model(params):
     else:
         raise ValueError(f"Invalid model_name: {model_name}")
 
-    model.train(X_train, y_train)
+    model.fit(X_train, y_train)
     evaluation_result = model.evaluate(X_test, y_test)
-    print(evaluation_result['report'])
-    # Save the trained model
-    model_filename = f"{hospital_phone}_{train_type}_{model_name}_model.pkl"
-    model_file_path = os.path.join(model_file_storage_path, model_filename)
-    model.save_model(model_file_path)
 
-    # Save training information
-    save_training_information(hospital_phone, train_type, model_name, evaluation_result, model_file_path)
+    # Create a directory structure for the model file
+    hospital_directory = os.path.join(model_file_storage_path, hospital_phone)
+    train_type_directory = os.path.join(hospital_directory, train_type)
+    os.makedirs(train_type_directory, exist_ok=True)
+
+    # Save the trained model
+    model_filename = f"{model_name}_model.pkl"
+    model_file_path = os.path.join(train_type_directory, model_filename)
+
+    # Extract the feature names
+    feature_names = X_train.columns.tolist()
+
+    # Save the model and training information
+    model.save_model(model_file_path, evaluation_result, feature_names)
 
     return evaluation_result
