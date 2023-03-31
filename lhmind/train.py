@@ -1,8 +1,8 @@
 # lhmind/train.py
 import os
-from lhmind.data_processing import preprocess_data
-from lhmind.models import LogisticRegressionModel, RandomForestModel, SVMModel
-from lhmind.utils import save_training_information
+from .data_processing import preprocess_data
+from .models import LogisticRegressionModel, RandomForestModel, SVMModel
+from .utils import save_training_information
 
 
 def train_model(params):

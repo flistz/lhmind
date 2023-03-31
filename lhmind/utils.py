@@ -2,6 +2,7 @@
 import csv
 import os
 
+
 def save_training_information(hospital_phone, train_type, model_name, evaluation_result, model_file_path):
     training_info_file = "training_information.csv"
 

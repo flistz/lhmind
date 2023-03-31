@@ -1,4 +1,3 @@
-# lhmind/models/base.py
 import os
 import json
 from datetime import datetime
@@ -18,8 +17,12 @@ class BaseModel:
     def predict(self, X):
         return self.model.predict(X)
 
+    def score(self, X):
+        return self.model.predict_proba(X)[:, 1]  # Output probabilities for class 1
+
     def evaluate(self, X, y):
         y_pred = self.predict(X)
+        print(self.__class__.__name__)
         print(classification_report(y, y_pred))
         return classification_report(y, y_pred, output_dict=True)
 
@@ -50,7 +53,7 @@ class BaseModel:
             'evaluation_result': evaluation_result,
             'feature_names': feature_names,
             'median_values_dict': median_values_dict
-    }
+        }
 
         # Load existing training information from the JSON file
         training_info_file = os.path.join(os.path.dirname(model_file_path), 'training_info.json')
@@ -69,3 +72,13 @@ class BaseModel:
 
     def load_model(self, model_file_path):
         self.model = joblib.load(model_file_path)
+
+    def load_training_info(self, model_file_path):
+        # Construct the training_info.json file path
+        training_info_file_path = os.path.join(os.path.dirname(model_file_path), 'training_info.json')
+
+        # Load the training information
+        with open(training_info_file_path, 'r') as f:
+            training_info = json.load(f)
+
+        return training_info[self.__class__.__name__]

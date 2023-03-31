@@ -114,3 +114,34 @@ def preprocess_data(data, train_type, reference_values):
     X_train, X_test, y_train, y_test = train_test_split(X, y, test_size=0.2, random_state=42)
 
     return (X_train, X_test, y_train, y_test), median_values_dict
+
+
+def preprocess_data_for_prediction(data, reference_values, median_values_dict, feature_names):
+    normalized_data = data.copy()
+
+    # Normalize age
+    normalized_data['AGE'] = normalized_data['AGE'].apply(lambda x: (x - 1) / (100 - 1))
+
+    feature_names_without_age = feature_names.copy()
+    feature_names_without_age.remove("AGE")
+
+    # Fill missing values using median values from the median_values_dict
+    for feature_name in feature_names_without_age:
+        normalized_data[feature_name].fillna(median_values_dict[feature_name], inplace=True)
+
+    # Normalize blood test data based on gender and reference values
+    for gender in ['M', 'F']:
+        for feature_name in feature_names_without_age:
+            # Get the reference values for the current feature and gender
+            ref_row = reference_values.loc[(reference_values['indicator'] == feature_name) & (reference_values['gender'] == gender)]
+            min_val, max_val = ref_row['min'].values[0], ref_row['max'].values[0]
+
+            # Normalize the data in-place for the current feature and gender
+            mask = normalized_data['SEX'] == gender
+            normalized_data.loc[mask, feature_name] = (normalized_data.loc[mask, feature_name] - min_val) / (max_val - min_val)
+
+    # Slice the DataFrame to include only feature columns
+    preprocessed_data = normalized_data[feature_names]
+
+    return preprocessed_data
+

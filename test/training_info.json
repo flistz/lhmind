@@ -1,30 +1,30 @@
 {
     "LogisticRegressionModel": {
-        "model_file": "/Users/hermann/PycharmProjects/lhmind/models/1234567890/normal_cancer/logistic_regression_model.pkl",
+        "model_file_path": "/Users/hermann/PycharmProjects/lhmind/models/1234567890/normal_cancer/fanai/logistic_regression_model.pkl",
         "evaluation_result": {
             "0": {
-                "precision": 0.9624664879356568,
-                "recall": 0.991908427077166,
-                "f1-score": 0.9769656915152104,
+                "precision": 0.9670710571923743,
+                "recall": 0.9911190053285968,
+                "f1-score": 0.9789473684210526,
                 "support": 5067
             },
             "1": {
-                "precision": 0.83984375,
-                "recall": 0.5231143552311436,
-                "f1-score": 0.6446776611694153,
+                "precision": 0.8421052631578947,
+                "recall": 0.583941605839416,
+                "f1-score": 0.689655172413793,
                 "support": 411
             },
-            "accuracy": 0.9567360350492881,
+            "accuracy": 0.9605695509309967,
             "macro avg": {
-                "precision": 0.9011551189678284,
-                "recall": 0.7575113911541548,
-                "f1-score": 0.8108216763423128,
+                "precision": 0.9045881601751344,
+                "recall": 0.7875303055840064,
+                "f1-score": 0.8343012704174229,
                 "support": 5478
             },
             "weighted avg": {
-                "precision": 0.9532664249032444,
-                "recall": 0.9567360350492881,
-                "f1-score": 0.9520349904432641,
+                "precision": 0.9576952007943875,
+                "recall": 0.9605695509309967,
+                "f1-score": 0.957242532247452,
                 "support": 5478
             }
         },
@@ -68,77 +68,44 @@
             "APOA1",
             "TBIL"
         ],
-        "timestamp": "2023-03-30 14:53:13"
-    },
-    "SVMModel": {
-        "model_file": "/Users/hermann/PycharmProjects/lhmind/models/1234567890/normal_cancer/svm_model.pkl",
-        "evaluation_result": {
-            "0": {
-                "precision": 0.9596574690770695,
-                "recall": 0.9952634695085849,
-                "f1-score": 0.9771362139120324,
-                "support": 5067
-            },
-            "1": {
-                "precision": 0.8923766816143498,
-                "recall": 0.48418491484184917,
-                "f1-score": 0.6277602523659306,
-                "support": 411
-            },
-            "accuracy": 0.9569185834246076,
-            "macro avg": {
-                "precision": 0.9260170753457097,
-                "recall": 0.739724192175217,
-                "f1-score": 0.8024482331389815,
-                "support": 5478
-            },
-            "weighted avg": {
-                "precision": 0.9546095677175992,
-                "recall": 0.9569185834246076,
-                "f1-score": 0.9509234500939513,
-                "support": 5478
-            }
-        },
-        "feature_names": [
-            "AGE",
-            "RBC",
-            "HCT",
-            "NEUT",
-            "NEUTNO",
-            "MONO",
-            "MONONO",
-            "BASO",
-            "BASONO",
-            "EO",
-            "EONO",
-            "MCH",
-            "MCHC",
-            "MPV",
-            "WBC",
-            "MCV",
-            "PLT",
-            "PDW",
-            "LYMPH",
-            "LYMPHNO",
-            "RDW_CV",
-            "RDW_SD",
-            "PCT",
-            "HGB",
-            "ALB",
-            "ALT",
-            "AST",
-            "GGT",
-            "CREA",
-            "UREA",
-            "UA",
-            "GLU",
-            "CHOL",
-            "TG",
-            "HDL_C",
-            "LDL_C",
-            "APOA1",
-            "TBIL"
-        ],
-        "timestamp": "2023-03-30 14:52:44"
+        "median_values_dict": {
+            "RBC": 4.78,
+            "HCT": 44.3,
+            "NEUT": 56.7,
+            "NEUTNO": 3.48,
+            "MONO": 4.8,
+            "MONONO": 0.29,
+            "BASO": 0.6,
+            "BASONO": 0.3,
+            "EO": 2.0,
+            "EONO": 0.26,
+            "MCH": 29.7,
+            "MCHC": 327.0,
+            "MPV": 8.5,
+            "WBC": 5.94,
+            "MCV": 92.8,
+            "PLT": 196.0,
+            "PDW": 16.1,
+            "LYMPH": 33.1,
+            "LYMPHNO": 1.99,
+            "RDW_CV": 12.2,
+            "RDW_SD": 42.2,
+            "PCT": 0.19,
+            "HGB": 145.0,
+            "ALB": 47.38,
+            "ALT": 17.29,
+            "AST": 18.5,
+            "GGT": 22.5,
+            "CREA": 68.6,
+            "UREA": 4.98,
+            "UA": 315.7,
+            "GLU": 5.58,
+            "CHOL": 4.95,
+            "TG": 1.33,
+            "HDL_C": 1.37,
+            "LDL_C": 3.14,
+            "APOA1": 1.36,
+            "TBIL": 12.81
+        }
     }
 }
